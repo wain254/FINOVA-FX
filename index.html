@@ -319,7 +319,163 @@
         }
 
         /* ============================================================
-           SESSION CLOCK - FANCY STYLED
+           DAILY BIAS SECTION - SIMPLIFIED
+           ============================================================ */
+        .daily-bias {
+            background: rgba(20, 28, 45, 0.4);
+            border-radius: 24px;
+            border: 1px solid rgba(26, 115, 232, 0.06);
+            padding: 24px 32px;
+            margin: 20px 0 30px;
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .daily-bias::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2ecc71, #1a73e8);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .daily-bias.bearish::before {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .daily-bias.neutral::before {
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+
+        .bias-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bias-label {
+            font-size: 28px;
+            font-weight: 900;
+            padding: 8px 24px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1px;
+        }
+
+        .bias-label.bullish {
+            background: rgba(46, 204, 113, 0.12);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.15);
+        }
+
+        .bias-label.bullish i {
+            animation: bounceUp 1.5s ease-in-out infinite;
+        }
+
+        .bias-label.bearish {
+            background: rgba(231, 76, 60, 0.12);
+            color: #e74c3c;
+            border: 1px solid rgba(231, 76, 60, 0.15);
+        }
+
+        .bias-label.bearish i {
+            animation: bounceDown 1.5s ease-in-out infinite;
+        }
+
+        .bias-label.neutral {
+            background: rgba(241, 196, 15, 0.12);
+            color: #f39c12;
+            border: 1px solid rgba(241, 196, 15, 0.15);
+        }
+
+        .bias-label.neutral i {
+            animation: none;
+        }
+
+        @keyframes bounceUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        @keyframes bounceDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
+        }
+
+        .bias-date {
+            color: #6a7a8a;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .bias-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .bias-confidence {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 8px 20px;
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .bias-confidence .conf-label {
+            font-size: 12px;
+            color: #6a7a8a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .bias-confidence .conf-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .bias-confidence .conf-value.high { color: #2ecc71; }
+        .bias-confidence .conf-value.medium { color: #f39c12; }
+        .bias-confidence .conf-value.low { color: #e74c3c; }
+
+        .bias-confidence .conf-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .bias-confidence .conf-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .bias-confidence .conf-dots .dot.active {
+            background: #2ecc71;
+        }
+
+        .bias-confidence .conf-dots .dot.active.medium { background: #f39c12; }
+        .bias-confidence .conf-dots .dot.active.low { background: #e74c3c; }
+
+        /* ============================================================
+           SESSION CLOCK
            ============================================================ */
         .session-clock-container {
             background: rgba(20, 28, 45, 0.4);
@@ -356,7 +512,6 @@
             align-items: center;
         }
 
-        /* Current Session */
         .session-current {
             text-align: center;
             padding: 16px;
@@ -423,7 +578,6 @@
             border-radius: 0 0 4px 4px;
         }
 
-        /* Session Colors */
         .session-current.asian .session-name { color: #ffd700; }
         .session-current.asian .session-indicator { background: linear-gradient(90deg, #ffd700, #f0a500); }
         .session-current.asian .session-status .pulse-dot { background: #ffd700; }
@@ -444,7 +598,6 @@
         .session-current.closed .session-status { color: #6a7a8a; }
         .session-current.closed { border-color: rgba(106, 122, 138, 0.15); background: rgba(106, 122, 138, 0.04); }
 
-        /* Countdown Timer */
         .session-countdown {
             text-align: center;
             padding: 16px;
@@ -489,7 +642,6 @@
             font-weight: 700;
         }
 
-        /* Session Scroll / Timeline */
         .session-scroll {
             display: flex;
             flex-direction: column;
@@ -1119,7 +1271,7 @@
         }
 
         /* ============================================================
-           GOLD CALCULATOR (MyFXBook Style)
+           GOLD CALCULATOR
            ============================================================ */
         .calculator-header {
             text-align: center;
@@ -1284,7 +1436,7 @@
         }
 
         /* ============================================================
-           LIVE NEWS / TWITTER FEED SECTION
+           LIVE NEWS / TWITTER FEED
            ============================================================ */
         .news-header {
             text-align: center;
@@ -1308,20 +1460,15 @@
             margin: 8px auto 0;
         }
 
-        /* ============================================================
-           ELFSIGHT TWITTER FEED - CUSTOM STYLING
-           ============================================================ */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 {
             max-width: 900px !important;
             margin: 0 auto !important;
         }
 
-        /* Style the widget container */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed {
             background: transparent !important;
         }
 
-        /* Individual tweet cards */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-item {
             background: rgba(20, 28, 45, 0.5) !important;
             backdrop-filter: blur(8px) !important;
@@ -1340,7 +1487,6 @@
             background: rgba(20, 28, 45, 0.6) !important;
         }
 
-        /* Author name */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-author-name {
             color: #ffffff !important;
             font-weight: 700 !important;
@@ -1348,14 +1494,12 @@
             font-family: 'Inter', sans-serif !important;
         }
 
-        /* Author handle */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-author-handle {
             color: #6a7a8a !important;
             font-size: 14px !important;
             font-weight: 400 !important;
         }
 
-        /* Tweet text */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-text {
             color: #e8edf5 !important;
             font-size: 15px !important;
@@ -1363,7 +1507,6 @@
             font-family: 'Inter', sans-serif !important;
         }
 
-        /* Tweet links */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-text a {
             color: #1a73e8 !important;
             text-decoration: none !important;
@@ -1374,20 +1517,17 @@
             text-decoration: underline !important;
         }
 
-        /* Tweet date */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-date {
             color: #6a7a8a !important;
             font-size: 13px !important;
             font-family: 'Inter', sans-serif !important;
         }
 
-        /* Tweet images */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-image img {
             border-radius: 12px !important;
             border: 1px solid rgba(26, 115, 232, 0.04) !important;
         }
 
-        /* Engagement buttons */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-actions button {
             color: #6a7a8a !important;
             transition: all 0.3s ease !important;
@@ -1405,7 +1545,6 @@
             color: #2ecc71 !important;
         }
 
-        /* Follow button */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .follow-button {
             background: linear-gradient(135deg, #1a73e8, #0d47a1) !important;
             color: #ffffff !important;
@@ -1423,7 +1562,6 @@
             box-shadow: 0 8px 30px rgba(26, 115, 232, 0.3) !important;
         }
 
-        /* Scrollbar styling */
         .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed::-webkit-scrollbar {
             width: 6px !important;
         }
@@ -1438,7 +1576,6 @@
             border-radius: 10px !important;
         }
 
-        /* Responsive tweaks */
         @media (max-width: 768px) {
             .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-item {
                 padding: 16px !important;
@@ -1449,9 +1586,6 @@
             }
         }
 
-        /* ============================================================
-           NEWS CONTAINER
-           ============================================================ */
         .news-container {
             background: rgba(20, 28, 45, 0.3);
             border: 1px solid rgba(26, 115, 232, 0.04);
@@ -1560,7 +1694,7 @@
         }
 
         /* ============================================================
-           FOOTER WITH SOCIAL LINKS
+           FOOTER
            ============================================================ */
         .footer {
             position: relative;
@@ -1682,6 +1816,16 @@
                 flex: 1;
                 min-width: 120px;
             }
+            .daily-bias {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .bias-left {
+                flex-wrap: wrap;
+            }
+            .bias-right {
+                flex-wrap: wrap;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1755,6 +1899,19 @@
             .session-scroll {
                 flex-direction: column;
             }
+            .daily-bias {
+                padding: 18px 16px;
+            }
+            .bias-label {
+                font-size: 22px;
+                padding: 6px 16px;
+            }
+            .bias-confidence {
+                padding: 6px 14px;
+            }
+            .bias-confidence .conf-value {
+                font-size: 16px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1791,6 +1948,24 @@
             }
             .session-countdown .countdown-timer {
                 font-size: 20px;
+            }
+            .daily-bias {
+                padding: 14px 12px;
+            }
+            .bias-label {
+                font-size: 18px;
+                padding: 4px 12px;
+            }
+            .bias-left {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .bias-confidence {
+                padding: 4px 12px;
+            }
+            .bias-confidence .conf-value {
+                font-size: 14px;
             }
         }
     </style>
@@ -1910,10 +2085,10 @@
                                 </div>
                             </div>
                             <div class="card-item">
-                                <div class="icon"><i class="fas fa-bell"></i></div>
+                                <div class="icon"><i class="fas fa-flag"></i></div>
                                 <div class="info">
-                                    <h4>Live News Alerts</h4>
-                                    <p>Real-time market updates</p>
+                                    <h4>Daily Bias</h4>
+                                    <p>Gold Bullish/Bearish</p>
                                 </div>
                             </div>
                             <div class="card-progress">
@@ -1928,6 +2103,33 @@
                 </div>
             </div>
         </section>
+
+        <!-- ============================================================
+        DAILY BIAS SECTION - SIMPLIFIED (Bias + Confidence Only)
+        ============================================================ -->
+        <div class="container">
+            <div class="daily-bias" id="dailyBias">
+                <div class="bias-left">
+                    <!-- Change "bullish" to "bearish" or "neutral" -->
+                    <span class="bias-label bullish" id="biasLabel">
+                        <i class="fas fa-arrow-up"></i> GOLD BULLISH
+                    </span>
+                    <span class="bias-date" id="biasDate">📅 Monday, June 29, 2026</span>
+                </div>
+                <div class="bias-right">
+                    <div class="bias-confidence">
+                        <span class="conf-label">Confidence</span>
+                        <!-- Change "High" to "Medium" or "Low" -->
+                        <span class="conf-value high" id="confidenceValue">High</span>
+                        <div class="conf-dots">
+                            <span class="dot active" id="dot1"></span>
+                            <span class="dot active" id="dot2"></span>
+                            <span class="dot active" id="dot3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- ============================================================
@@ -3014,6 +3216,8 @@
         console.log('📐 Gold Calculator ready');
         console.log('🕐 Trading Sessions Clock active');
         console.log('📰 Elfsight Twitter Feed integrated');
+        console.log('📈 Daily Bias: GOLD BULLISH (Update in HTML)');
+        console.log('📊 Confidence: High (Update in HTML)');
         console.log('🔗 Referral link: http://live.ofinancial.markets/signup/faT4NlLK');
         console.log('📱 Social links added: WhatsApp, Instagram, Telegram, Telegram Group');
     </script>
