@@ -1310,103 +1310,145 @@
         }
 
         /* ============================================================
-           NOTIFICATION BADGE - NEW
+           ELFSIGHT TWITTER FEED - CUSTOM STYLING
            ============================================================ */
-        .notification-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(26, 115, 232, 0.08);
-            border: 1px solid rgba(26, 115, 232, 0.12);
-            border-radius: 60px;
-            padding: 8px 20px 8px 16px;
-            margin: 12px auto 20px;
-            animation: notifPulse 2s ease-in-out infinite;
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 {
+            max-width: 900px !important;
+            margin: 0 auto !important;
         }
 
-        @keyframes notifPulse {
-            0%, 100% { border-color: rgba(26, 115, 232, 0.12); }
-            50% { border-color: rgba(26, 115, 232, 0.3); }
+        /* Style the widget container */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed {
+            background: transparent !important;
         }
 
-        .notification-badge .notif-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #fff;
+        /* Individual tweet cards */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-item {
+            background: rgba(20, 28, 45, 0.5) !important;
+            backdrop-filter: blur(8px) !important;
+            -webkit-backdrop-filter: blur(8px) !important;
+            border-radius: 16px !important;
+            border: 1px solid rgba(26, 115, 232, 0.06) !important;
+            padding: 20px !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            margin-bottom: 16px !important;
         }
 
-        .notification-badge .notif-icon .fa-bell {
-            animation: ring 2s ease-in-out infinite;
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-item:hover {
+            transform: translateY(-4px) !important;
+            border-color: rgba(26, 115, 232, 0.15) !important;
+            box-shadow: 0 8px 30px rgba(26, 115, 232, 0.08) !important;
+            background: rgba(20, 28, 45, 0.6) !important;
         }
 
-        @keyframes ring {
-            0%, 100% { transform: rotate(0deg); }
-            5% { transform: rotate(15deg); }
-            10% { transform: rotate(-15deg); }
-            15% { transform: rotate(10deg); }
-            20% { transform: rotate(-10deg); }
-            25% { transform: rotate(5deg); }
-            30% { transform: rotate(-5deg); }
-            35% { transform: rotate(0deg); }
+        /* Author name */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-author-name {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            font-size: 16px !important;
+            font-family: 'Inter', sans-serif !important;
         }
 
-        .notification-badge .notif-count {
-            font-size: 24px;
-            font-weight: 800;
-            color: #ffffff;
-            min-width: 30px;
-            text-align: center;
+        /* Author handle */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-author-handle {
+            color: #6a7a8a !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
         }
 
-        .notification-badge .notif-label {
-            font-size: 13px;
-            color: #8e9eae;
-            font-weight: 500;
+        /* Tweet text */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-text {
+            color: #e8edf5 !important;
+            font-size: 15px !important;
+            line-height: 1.7 !important;
+            font-family: 'Inter', sans-serif !important;
         }
 
-        .notification-badge .notif-label strong {
-            color: #1a73e8;
+        /* Tweet links */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-text a {
+            color: #1a73e8 !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
         }
 
-        .notification-badge .notif-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #2ecc71;
-            animation: pulse 1.5s ease-in-out infinite;
-            display: inline-block;
-            margin-left: 4px;
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-text a:hover {
+            text-decoration: underline !important;
         }
 
-        .notification-badge .notif-dot.inactive {
-            background: #6a7a8a;
-            animation: none;
+        /* Tweet date */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-date {
+            color: #6a7a8a !important;
+            font-size: 13px !important;
+            font-family: 'Inter', sans-serif !important;
         }
 
-        /* Notification count badges */
-        .notif-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            font-size: 14px;
-            font-weight: 800;
-            background: #1a73e8;
-            color: #fff;
-            padding: 0 8px;
+        /* Tweet images */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-image img {
+            border-radius: 12px !important;
+            border: 1px solid rgba(26, 115, 232, 0.04) !important;
         }
 
-        .notif-number.one { background: #1a73e8; }
-        .notif-number.two { background: #2ecc71; }
-        .notif-number.three { background: #ffd700; color: #0a0e1a; }
+        /* Engagement buttons */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-actions button {
+            color: #6a7a8a !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-actions button:hover {
+            color: #1a73e8 !important;
+        }
+
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-actions .like-button:hover {
+            color: #ff6b6b !important;
+        }
+
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-actions .retweet-button:hover {
+            color: #2ecc71 !important;
+        }
+
+        /* Follow button */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .follow-button {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1) !important;
+            color: #ffffff !important;
+            border: none !important;
+            border-radius: 60px !important;
+            padding: 8px 24px !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            font-family: 'Inter', sans-serif !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .follow-button:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 30px rgba(26, 115, 232, 0.3) !important;
+        }
+
+        /* Scrollbar styling */
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed::-webkit-scrollbar {
+            width: 6px !important;
+        }
+
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02) !important;
+            border-radius: 10px !important;
+        }
+
+        .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed::-webkit-scrollbar-thumb {
+            background: #1a73e8 !important;
+            border-radius: 10px !important;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-item {
+                padding: 16px !important;
+            }
+            
+            .elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4 .eapps-twitter-feed .tweet-text {
+                font-size: 14px !important;
+            }
+        }
 
         /* ============================================================
            NEWS CONTAINER
@@ -1417,68 +1459,10 @@
             border-radius: 28px;
             padding: 32px 28px;
             margin-top: 20px;
-            max-width: 800px;
+            max-width: 960px;
             margin-left: auto;
             margin-right: auto;
-            min-height: 300px;
-        }
-
-        .news-container .twitter-timeline {
-            border-radius: 16px !important;
-            overflow: hidden !important;
-        }
-
-        .news-container iframe {
-            border-radius: 16px !important;
-        }
-
-        .news-loading {
-            text-align: center;
-            padding: 60px 0;
-        }
-
-        .news-loading .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(26, 115, 232, 0.1);
-            border-top: 3px solid #1a73e8;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 16px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .news-loading p {
-            color: #6a7a8a;
-            font-size: 15px;
-        }
-
-        .no-tweets {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .no-tweets i {
-            font-size: 48px;
-            color: #6a7a8a;
-        }
-
-        .no-tweets h3 {
-            color: #ffffff;
-            margin-top: 16px;
-            font-size: 22px;
-        }
-
-        .no-tweets p {
-            color: #6a7a8a;
-            margin-top: 8px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            min-height: 100px;
         }
 
         /* ============================================================
@@ -1772,14 +1756,6 @@
             .session-scroll {
                 flex-direction: column;
             }
-            .notification-badge {
-                padding: 6px 14px 6px 12px;
-                font-size: 13px;
-            }
-            .notification-badge .notif-count {
-                font-size: 20px;
-                min-width: 24px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -1816,21 +1792,6 @@
             }
             .session-countdown .countdown-timer {
                 font-size: 20px;
-            }
-            .notification-badge {
-                padding: 4px 10px 4px 8px;
-                font-size: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .notification-badge .notif-count {
-                font-size: 18px;
-                min-width: 20px;
-            }
-            .notification-badge .notif-icon {
-                width: 26px;
-                height: 26px;
-                font-size: 12px;
             }
         }
     </style>
@@ -1953,7 +1914,7 @@
                                 <div class="icon"><i class="fas fa-bell"></i></div>
                                 <div class="info">
                                     <h4>Live News Alerts</h4>
-                                    <p>Real-time tweet notifications</p>
+                                    <p>Real-time market updates</p>
                                 </div>
                             </div>
                             <div class="card-progress">
@@ -2311,29 +2272,13 @@
     </div>
 
     <!-- ============================================================
-    PAGE: LIVE NEWS (Twitter/X Feed + Session Clock + Notification)
+    PAGE: LIVE NEWS (Session Clock + Elfsight Twitter Feed)
     ============================================================ -->
     <div class="page" id="page-news">
         <div class="container">
             <div class="news-header">
                 <h1>Live <span>Market</span> News</h1>
-                <p>Real-time updates from @financialjuice — stay informed on market-moving events</p>
-            </div>
-
-            <!-- ============================================================
-            NOTIFICATION BADGE - Shows number of tweets
-            ============================================================ -->
-            <div style="text-align:center;">
-                <div class="notification-badge" id="notificationBadge">
-                    <div class="notif-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <span class="notif-count" id="tweetCount">0</span>
-                    <span class="notif-label">
-                        <strong>Tweet</strong> <span id="tweetPlural">s</span> in feed
-                        <span class="notif-dot" id="notifDot"></span>
-                    </span>
-                </div>
+                <p>Real-time updates from our trading feed — stay informed on market-moving events</p>
             </div>
 
             <!-- ============================================================
@@ -2401,45 +2346,16 @@
             </div>
 
             <!-- ============================================================
-            TWITTER FEED
+            ELFSIGHT TWITTER FEED
             ============================================================ -->
-            <div class="news-container" id="newsContainer">
-                <!-- Loading Spinner -->
-                <div id="newsLoading" class="news-loading">
-                    <div class="spinner"></div>
-                    <p>Loading latest tweets...</p>
-                </div>
-
-                <!-- Twitter/X Embed Code -->
-                <div id="twitterEmbed" style="display:none;">
-                    <a class="twitter-timeline" href="https://x.com/financialjuice?ref_src=twsrc%5Etfw" data-tweet-limit="10">
-                        Posts by financialjuice
-                    </a>
-                    <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
-                </div>
-
-                <!-- Fallback message if no tweets -->
-                <div id="noTweetsMessage" class="no-tweets" style="display:none;">
-                    <i class="fas fa-newspaper"></i>
-                    <h3>No Tweets Yet</h3>
-                    <p>
-                        The @financialjuice account hasn't posted recently.<br>
-                        New tweets will appear here automatically when they're posted!
-                    </p>
-                    <a href="https://x.com/financialjuice" target="_blank" class="btn-primary" style="margin-top:20px; display:inline-flex;">
-                        <i class="fab fa-x-twitter"></i> Follow @financialjuice
-                    </a>
-                </div>
+            <div class="news-container">
+                <!-- Elfsight Twitter Feed Widget -->
+                <div class="elfsight-app-b960e5fa-1253-42e5-bf4b-bdb6162046d4" data-elfsight-app-lazy></div>
+                <script src="https://elfsightcdn.com/platform.js" async></script>
             </div>
 
             <div style="text-align:center; margin-top:20px; color:#6a7a8a; font-size:14px;">
-                <i class="fas fa-sync-alt"></i> Feed updates automatically when new tweets are posted
-            </div>
-
-            <div style="text-align:center; margin-top:12px;">
-                <a href="https://x.com/financialjuice" target="_blank" class="btn-secondary" style="padding:10px 24px; font-size:14px;">
-                    <i class="fab fa-x-twitter"></i> Follow @financialjuice on X
-                </a>
+                <i class="fas fa-sync-alt"></i> Feed updates automatically with new posts
             </div>
         </div>
     </div>
@@ -2816,120 +2732,7 @@
         updateSessionClock();
 
         // ============================================================
-        // 4. TWITTER FEED LOADING & NOTIFICATION COUNTER
-        // ============================================================
-        let tweetCount = 0;
-        let notificationCheckInterval = null;
-
-        // Function to update the notification badge
-        function updateNotificationBadge(count) {
-            const tweetCountEl = document.getElementById('tweetCount');
-            const tweetPluralEl = document.getElementById('tweetPlural');
-            const notifDot = document.getElementById('notifDot');
-
-            tweetCount = count;
-            tweetCountEl.textContent = count;
-
-            // Update plural
-            if (count === 1) {
-                tweetPluralEl.textContent = '';
-            } else {
-                tweetPluralEl.textContent = 's';
-            }
-
-            // Update dot status
-            if (count > 0) {
-                notifDot.className = 'notif-dot';
-            } else {
-                notifDot.className = 'notif-dot inactive';
-            }
-
-            // Update color based on count
-            tweetCountEl.className = 'notif-count';
-            if (count === 1) {
-                tweetCountEl.classList.add('one');
-            } else if (count === 2) {
-                tweetCountEl.classList.add('two');
-            } else if (count >= 3) {
-                tweetCountEl.classList.add('three');
-            }
-        }
-
-        // Function to count tweets from the embed
-        function countTweetsFromFeed() {
-            // Try to count tweets from the iframe or Twitter widget
-            const iframes = document.querySelectorAll('.news-container iframe');
-            const twitterWidgets = document.querySelectorAll('.twitter-timeline');
-            
-            // If there are iframes, try to count tweets
-            if (iframes.length > 0) {
-                // We can't directly access iframe content due to CORS
-                // So we'll count based on the number of tweet elements we can find
-                // This is a workaround - we'll simulate tweet counting
-                // In a real scenario, you'd use Twitter's API
-                
-                // For demo purposes, we'll generate a random number between 0-5
-                // In production, you'd use Twitter's API or scrape the feed
-                const randomCount = Math.floor(Math.random() * 6);
-                updateNotificationBadge(randomCount);
-                
-                // Stop checking after we get a count
-                if (notificationCheckInterval) {
-                    clearInterval(notificationCheckInterval);
-                    notificationCheckInterval = null;
-                }
-            }
-        }
-
-        // Load Twitter widget
-        window.twttr = (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.x.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-            t._e = [];
-            t.ready = function(f) {
-                t._e.push(f);
-            };
-            return t;
-        }(document, "script", "twitter-wjs"));
-
-        // Show loading, then embed
-        setTimeout(function() {
-            document.getElementById('newsLoading').style.display = 'none';
-            document.getElementById('twitterEmbed').style.display = 'block';
-            
-            // Start counting tweets after embed loads
-            setTimeout(function() {
-                countTweetsFromFeed();
-                
-                // Set up periodic checking (every 30 seconds)
-                notificationCheckInterval = setInterval(countTweetsFromFeed, 30000);
-            }, 3000);
-            
-            // Check for no tweets fallback
-            setTimeout(function() {
-                var iframes = document.querySelectorAll('.news-container iframe');
-                if (iframes.length === 0) {
-                    document.getElementById('twitterEmbed').style.display = 'none';
-                    document.getElementById('noTweetsMessage').style.display = 'block';
-                    updateNotificationBadge(0);
-                    if (notificationCheckInterval) {
-                        clearInterval(notificationCheckInterval);
-                        notificationCheckInterval = null;
-                    }
-                }
-            }, 5000);
-        }, 3000);
-
-        // Initial notification - show loading state
-        updateNotificationBadge(0);
-
-        // ============================================================
-        // 5. TRADE DATA
+        // 4. TRADE DATA
         // ============================================================
         const tradeData = {
             1: {
@@ -3001,7 +2804,7 @@
         };
 
         // ============================================================
-        // 6. MODAL FUNCTIONS
+        // 5. MODAL FUNCTIONS
         // ============================================================
         function openModal(id) {
             const data = tradeData[id];
@@ -3041,7 +2844,7 @@
         }
 
         // ============================================================
-        // 7. TRADE FILTER
+        // 6. TRADE FILTER
         // ============================================================
         document.querySelectorAll('.trades-filter button').forEach(btn => {
             btn.addEventListener('click', function() {
@@ -3068,7 +2871,7 @@
         });
 
         // ============================================================
-        // 8. POSITION SIZE CALCULATOR
+        // 7. POSITION SIZE CALCULATOR
         // ============================================================
         function calculatePosition() {
             const balance = parseFloat(document.getElementById('accountBalance').value) || 10000;
@@ -3089,7 +2892,7 @@
         }
 
         // ============================================================
-        // 9. RISK / REWARD CALCULATOR
+        // 8. RISK / REWARD CALCULATOR
         // ============================================================
         function calculateRR() {
             const entry = parseFloat(document.getElementById('entryPrice').value) || 2045.80;
@@ -3111,7 +2914,7 @@
         }
 
         // ============================================================
-        // 10. COPY REFERRAL LINK
+        // 9. COPY REFERRAL LINK
         // ============================================================
         function copyReferralLink() {
             const link = 'http://live.ofinancial.markets/signup/faT4NlLK';
@@ -3140,7 +2943,7 @@
         }
 
         // ============================================================
-        // 11. MOBILE HAMBURGER
+        // 10. MOBILE HAMBURGER
         // ============================================================
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
@@ -3150,7 +2953,7 @@
         });
 
         // ============================================================
-        // 12. STAT COUNTER ANIMATION
+        // 11. STAT COUNTER ANIMATION
         // ============================================================
         function animateCounter(el, target, suffix = '') {
             let current = 0;
@@ -3186,7 +2989,7 @@
         if (tradeStat) statObserver.observe(tradeStat);
 
         // ============================================================
-        // 13. NAVBAR SCROLL EFFECT
+        // 12. NAVBAR SCROLL EFFECT
         // ============================================================
         const navbar = document.getElementById('navbar');
 
@@ -3202,7 +3005,7 @@
         });
 
         // ============================================================
-        // 14. AUTO-CALCULATE ON LOAD
+        // 13. AUTO-CALCULATE ON LOAD
         // ============================================================
         calculatePosition();
         calculateRR();
@@ -3210,9 +3013,8 @@
         console.log('🚀 FINOVA Academy — XAUUSD Trading Hub loaded!');
         console.log('📊 Previous Trades: Day Trading & Swing Trading');
         console.log('📐 Gold Calculator ready');
-        console.log('🕐 Trading Sessions Clock on Live News page');
-        console.log('📰 Live News feed from @financialjuice');
-        console.log('🔔 Tweet Notification: Shows 1, 2, or 3 tweets in feed');
+        console.log('🕐 Trading Sessions Clock active');
+        console.log('📰 Elfsight Twitter Feed integrated');
         console.log('🔗 Referral link: http://live.ofinancial.markets/signup/faT4NlLK');
         console.log('📱 Social links added: WhatsApp, Instagram, Telegram, Telegram Group');
     </script>
